@@ -21,7 +21,7 @@ app.set("view engine", "handlebars");
 var PORT = 3334;
 
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+  app.listen(process.env.PORT||PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 
